@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "home#index"
+  root to: "employees#new"
   
   match '/auth/:provider/callback' => 'auth#oauth_callback', via: [:get]
   post '/logout' => 'auth#logout'
