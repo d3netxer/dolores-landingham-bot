@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/18F/omniauth-myusa.git
+  remote: git://github.com/18f/omniauth-myusa.git
   revision: d918fa88b6b8e9d835a38afea9e9efaf015a74e4
   specs:
     omniauth-myusa (0.0.4)
