@@ -11,6 +11,7 @@ gem "simple_form"
 gem "slack-ruby-client"
 gem "uglifier"
 gem "sass-rails"
+gem 'omniauth-myusa', git: 'https://github.com/18F/omniauth-myusa.git'
 
 group :development, :test do
   gem "awesome_print"
