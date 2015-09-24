@@ -4,8 +4,15 @@ class AuthController < ApplicationController
   def oauth_callback
     auth = request.env['omniauth.auth']
 
-    session[:token] = auth.credentials.token
-    flash[:success] = "You successfully signed in"
-    redirect_to root_path
+    auth_email = auth.extra.raw_info.email
+    is_gsa = /gsa.gov/.match(auth_email)
+    
+    if !is_gsa
+      unauthorized
+    else
+      session[:token] = auth.credentials.token
+      flash[:success] = "You successfully signed in"
+      redirect_to root_path
+    end
   end
 end

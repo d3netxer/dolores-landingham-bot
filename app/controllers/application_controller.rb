@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def unauthorized
+    raise ActionController::RoutingError.new('Unauthorized')
+  end
+
 end
