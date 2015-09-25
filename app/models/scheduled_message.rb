@@ -3,15 +3,17 @@ class ScheduledMessage < ActiveRecord::Base
   validates :days_after_start, presence: true
   validates :title, presence: true
 
-  before_save :escape_special_characters
+  before_save :escape_specific_characters
 
   def body
-    self[:body].html_safe
+    self[:body].html_safe if self[:body]
   end
 
   protected
 
-  def escape_special_characters
-    self.body = ERB::Util::html_escape(self[:body])
+  def escape_specific_characters
+    self.body = self[:body].gsub('&', '&amp;')
+    self.body = self[:body].gsub('<', '&lt;')
+    self.body = self[:body].gsub('>', '&gt;')
   end
 end
