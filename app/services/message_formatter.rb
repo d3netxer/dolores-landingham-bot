@@ -4,7 +4,7 @@ class MessageFormatter
   end
 
   def escape_slack_characters
-    escaped_body = message_body
+    escaped_body = message.body
     escaped_body = escaped_body.gsub('&', '&amp;')
     escaped_body = escaped_body.gsub('<', '&lt;')
     escaped_body = escaped_body.gsub('>', '&gt;')
@@ -14,8 +14,4 @@ class MessageFormatter
   private
 
   attr_reader :message
-
-  def message_body
-    message.body || ""
-  end
 end
