@@ -1,5 +1,6 @@
 <%= simple_form_for @employee do |form| %>
   <%= form.input :slack_username %>
   <%= form.input :started_on %>
+  <%= form.input :time_zone, priority: /US/ %>
   <%= form.button :submit %>
 <% end %>

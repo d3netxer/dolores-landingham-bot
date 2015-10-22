@@ -52,7 +52,7 @@ class EmployeesController < ApplicationController
   private
 
   def employee_params
-    params.require(:employee).permit(:slack_username, :started_on)
+    params.require(:employee).permit(:slack_username, :started_on, :time_zone)
   end
 
   def unknown_employee(slack_username)
