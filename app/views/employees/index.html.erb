@@ -11,7 +11,7 @@
     <tr>
       <td><%= employee.slack_username %></td>
       <td><%= employee.started_on %></td>
-      <td><%= employee.time_zone.strftime("%l:%M %p") %></td>
+      <td><%= employee.time_zone %></td>
       <td><%= link_to "Edit", edit_employee_path(employee) %></td>
       <td><%= link_to "Delete",
         { action: :destroy, id: employee.id },
